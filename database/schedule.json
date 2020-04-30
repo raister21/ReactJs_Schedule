@@ -1,0 +1,23 @@
+[
+    {
+        "day": "sunday",
+        "time": "10:30 - 12:00",
+        "class": "Emerging",
+        "type": "Tutorial",
+        "key": 1
+    },
+    {
+        "day": "Monday",
+        "time": "10:30 - 12:00",
+        "class": "Software",
+        "type": "Tutorial",
+        "key": 2
+    },
+    {
+        "day": "wenday",
+        "time": "10:30 - 12:00",
+        "class": "Professional",
+        "type": "Tutorial",
+        "key": 3
+    }
+]
