@@ -1,6 +1,6 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
-
+import { View, Text, StyleSheet, Image } from 'react-native'
+import Img from './assets/insta.png'
 
 
 function Header() {
@@ -22,7 +22,6 @@ const styles = StyleSheet.create({
         alignItems: 'flex-start',
         paddingTop: 50,
         paddingLeft: 10,
-        alignItems: 'flex-start',
         justifyContent: 'center',
         flexDirection: "column",
     },
@@ -31,7 +30,8 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: '#555B5A',
         fontWeight: 'bold'
-    }
+    },
+
 })
 
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 import Header from './Header'
 import Body from './Body'
+import ProfilePic from './components/ProfilePic'
 
 export default function App() {
 
@@ -9,6 +10,7 @@ export default function App() {
     <View style={styles.container}>
       <View style={styles.header}>
         <Header />
+        <ProfilePic />
       </View>
       <View style={styles.body}>
         <Body />
@@ -26,6 +28,7 @@ const styles = StyleSheet.create({
 
   header: {
     flex: 2,
+    flexDirection: 'row',
     backgroundColor: '#629CEC',
     alignItems: 'flex-start',
     marginLeft: 30
@@ -38,7 +41,8 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 50,
     borderTopLeftRadius: 50,
     alignItems: 'center',
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+    padding: 60
 
   }
 });
