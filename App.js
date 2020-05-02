@@ -1,48 +1,49 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
-import Header from './Header'
-import Body from './Body'
-import ProfilePic from './components/ProfilePic'
+import { StyleSheet } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { NavigationContainer } from '@react-navigation/native'
+import Home from './Screens/Home'
+import Schedule from './Screens/Schedule'
+import Notification from './Screens/Notification'
+import { MaterialIcons } from '@expo/vector-icons'
 
 export default function App() {
 
-  return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <Header />
-        <ProfilePic />
-      </View>
-      <View style={styles.body}>
-        <Body />
-      </View>
+  const Tab = createBottomTabNavigator()
 
-    </View>
+  return (
+    <NavigationContainer>
+      <Tab.Navigator
+        initialRouteName="Home"
+        tabBarOptions={
+          { activeTintColor: '#2C45FE' }
+        }>
+        <Tab.Screen
+          name="Notifications"
+          component={Notification}
+          options={{
+            tabBarIcon: () =>
+              <MaterialIcons name='notifications' size={22} />
+
+          }} />
+        <Tab.Screen
+          name="Home"
+          component={Home}
+          options={{
+            tabBarIcon: () =>
+              <MaterialIcons name='home' size={22} />
+          }}
+        />
+        <Tab.Screen
+          name="Schedule"
+          component={Schedule}
+          options={{
+            tabBarIcon: () =>
+              <MaterialIcons name='date-range' size={22} />
+          }} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#629CEC',
-  },
 
-  header: {
-    flex: 2,
-    flexDirection: 'row',
-    backgroundColor: '#629CEC',
-    alignItems: 'flex-start',
-    marginLeft: 30
-
-  },
-
-  body: {
-    flex: 8,
-    width: '100%',
-    borderTopRightRadius: 50,
-    borderTopLeftRadius: 50,
-    alignItems: 'center',
-    backgroundColor: 'white',
-    padding: 60
-
-  }
-});
