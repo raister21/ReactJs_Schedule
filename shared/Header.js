@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-
+import ProfilePic from '../components/ProfilePic'
 
 function Header() {
     var time = new Date()
@@ -10,34 +10,58 @@ function Header() {
     const [dayNow, setDayNow] = useState('')
     const [hourNow, setHourNow] = useState('')
     const [minuteNow, setMinuteNow] = useState('')
+    const [secondNow, setSecondNow] = useState('')
 
 
-    useEffect(() => {
+    const updateTime = () => {
         const dayChange = day[time.getDay()]
-        var hourChange = time.getHours()
-        var minuteChange = time.getMinutes()
+        const hourChange = time.getHours()
+        const minuteChange = time.getMinutes()
+        const secondChange = time.getSeconds()
+
 
         setDayNow(dayChange)
         setHourNow(hourChange)
         setMinuteNow(minuteChange)
-    }, [dayNow, hourNow, minuteNow])
+        setSecondNow(secondChange)
+    }
+
+
+    useEffect(() => {
+        setTimeout(() => { updateTime() }, 1000)
+    })
+
 
     return (
-        <View style={styles.datetime}>
-            <Text style={styles.text}>{dayNow}</Text>
-            <Text style={styles.text}>{`${hourNow} : ${minuteNow} , ${month[time.getMonth()]} ${time.getDate()}`}</Text>
+        <View style={styles.container}>
+            <View style={styles.datetime}>
+                <Text style={styles.text}>{dayNow}</Text>
+                <Text style={styles.text}>{`${hourNow} : ${minuteNow} : ${secondNow}, ${month[time.getMonth()]} ${time.getDate()}`}</Text>
+            </View>
+            <View style={styles.profile}>
+                <ProfilePic />
+            </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flexDirection: 'row'
+    },
+
     datetime: {
         flex: 1,
         alignItems: 'flex-start',
-        paddingTop: 50,
+        paddingTop: 60,
         paddingLeft: 10,
         justifyContent: 'center',
         flexDirection: "column",
+    },
+
+    profile: {
+        alignSelf: 'flex-end',
+        marginRight: 20
     },
 
     text: {

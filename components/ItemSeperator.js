@@ -5,8 +5,9 @@ function ItemSeperator() {
     return (
         <View
             style={{
-                height: 1,
-                width: '100%',
+                height: 2,
+                alignSelf: 'center',
+                width: '90%',
                 backgroundColor: '#555B5A',
                 marginTop: 15,
                 marginBottom: 15
