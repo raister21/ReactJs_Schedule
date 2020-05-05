@@ -16,7 +16,7 @@ function NotificationFeed() {
                     </View>
                     <View style={style.post}>
                         <Text>{item.post}</Text>
-                        <Text>{item.time}</Text>
+                        <Text style={{ alignSelf: 'flex-end' }}>{item.time}</Text>
                     </View>
                 </View>
             )}
@@ -43,7 +43,8 @@ const style = StyleSheet.create({
 
     post: {
         flex: 3,
-        marginTop: 10
+        marginTop: 10,
+        paddingLeft: 20
     }
 })
 

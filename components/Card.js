@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler'
+import { MaterialIcons } from '@expo/vector-icons'
 
-function Card({ text, color }) {
+function Card({ text, color, icon }) {
 
 
     return (
         <View style={[{ backgroundColor: color }, styles.container]}>
-            <Text>{text}</Text>
+            <MaterialIcons name={icon} size={30} />
+            <Text >{text}</Text>
         </View>
     )
 }

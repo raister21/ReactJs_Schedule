@@ -10,7 +10,7 @@ function NotificationBody() {
             <ItemSeperator />
             <NotificationFeed />
             <View style={styles.clearBtn}>
-                <Button title="Clear" color="#FFD06B" />
+                <Text style={{ textAlign: 'center', fontSize: 14 }}>Clear</Text>
             </View>
 
         </View>
@@ -31,7 +31,13 @@ const styles = StyleSheet.create({
     },
     clearBtn: {
         marginTop: 120,
-        borderRadius: 10
+        borderRadius: 10,
+        backgroundColor: '#FFD06B',
+        padding: 20,
+        borderRadius: 20,
+
+
+
     }
 })
 
