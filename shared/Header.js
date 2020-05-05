@@ -7,10 +7,10 @@ function Header() {
     const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     const day = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
-    const [dayNow, setDayNow] = useState('')
-    const [hourNow, setHourNow] = useState('')
-    const [minuteNow, setMinuteNow] = useState('')
-    const [secondNow, setSecondNow] = useState('')
+    const [dayNow, setDayNow] = useState(day[time.getDay()])
+    const [hourNow, setHourNow] = useState(time.getHours())
+    const [minuteNow, setMinuteNow] = useState(time.getMinutes())
+    const [secondNow, setSecondNow] = useState(time.getSeconds())
 
 
     const updateTime = () => {
@@ -19,11 +19,11 @@ function Header() {
         const minuteChange = time.getMinutes()
         const secondChange = time.getSeconds()
 
-
         setDayNow(dayChange)
         setHourNow(hourChange)
         setMinuteNow(minuteChange)
         setSecondNow(secondChange)
+
     }
 
 
