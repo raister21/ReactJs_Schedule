@@ -3,12 +3,14 @@
         "poster": "Omae wa",
         "post": "Lorem pasum ani yeso teso garum",
         "time": "8.30, April 20",
-        "posterId": "usr101"
+        "posterId": "usr101",
+        "id" : "Omaewa0830A20"
     },
     {
         "poster": "Omae wa2",
         "post": "Lorem pasum ani yeso teso garum",
         "time": "6.30, April 20",
-        "posterId": "usr102"
+        "posterId": "usr102",
+        "id" : "Omaewa20630A20"
     }
 ]

@@ -8,6 +8,7 @@ function NotificationFeed() {
     return (
         <FlatList
             data={notification}
+            keyExtractor={ item => item.id}
             renderItem={({ item }) => (
                 <View style={style.postBlock}>
                     <View style={style.profile}>
