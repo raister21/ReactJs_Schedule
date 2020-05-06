@@ -1,8 +1,7 @@
 import React, { useState, Component } from 'react';
-import { StyleSheet } from 'react-native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { NavigationContainer } from '@react-navigation/native'
-import Home from './Screens/Home'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import Note from './Screens/Note'
 import Schedule from './Screens/Schedule'
 import Notification from './Screens/Notification'
 import { MaterialIcons } from '@expo/vector-icons'
@@ -16,7 +15,7 @@ export default class App extends Component {
     return (
       <NavigationContainer>
         <Tab.Navigator
-          initialRouteName="Home"
+          initialRouteName="Note"
           tabBarOptions={
             { activeTintColor: '#2C45FE' }
           }>
@@ -29,11 +28,11 @@ export default class App extends Component {
 
             }} />
           <Tab.Screen
-            name="Home"
-            component={Home}
+            name="Note"
+            component={Note}
             options={{
               tabBarIcon: () =>
-                <MaterialIcons name='home' size={22} />
+                <MaterialIcons name='note' size={22} />
             }}
           />
           <Tab.Screen
