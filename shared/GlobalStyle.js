@@ -8,11 +8,11 @@ export const globalStyle = StyleSheet.create({
     },
 
     header: {
-        flex: 5,
+        flex: 3,
         flexDirection: 'row',
         backgroundColor: '#629CEC',
-        alignItems: 'flex-start',
-        marginLeft: 30
+        alignItems: 'flex-end',
+
 
     },
 

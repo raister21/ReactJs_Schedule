@@ -13,7 +13,7 @@ function Notes() {
             keyExtractor={item => item.id}
             renderItem={({ item }) => (
                 <View style={styles.noteBlock}>
-                    <Text>{item.note}</Text>
+                    <Text style={styles.indNote}>{item.note}</Text>
                 </View>
             )}
         />
@@ -22,9 +22,14 @@ function Notes() {
 
 const styles = StyleSheet.create({
     noteBlock: {
-        flex: 1,
-        backgroundColor: 'red'
+        marginTop: 5,
+        padding: 10,
+    },
+
+    indNote: {
+        fontSize: 16
     }
+
 })
 
 export default Notes

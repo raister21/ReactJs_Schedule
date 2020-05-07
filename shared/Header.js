@@ -47,21 +47,23 @@ function Header() {
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
         flexDirection: 'row'
     },
 
     datetime: {
         flex: 1,
         alignItems: 'flex-start',
-        paddingTop: 60,
-        paddingLeft: 10,
+        paddingLeft: 40,
+        paddingBottom: 10,
         justifyContent: 'center',
         flexDirection: "column",
     },
 
     profile: {
         alignSelf: 'flex-end',
-        marginRight: 20
+        paddingRight: 40,
+        paddingBottom: 10
     },
 
     text: {

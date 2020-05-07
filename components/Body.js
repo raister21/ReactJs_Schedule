@@ -36,17 +36,19 @@ const styles = StyleSheet.create({
         fontSize: 28,
         marginTop: 5,
         marginLeft: 5,
-        fontWeight: 'bold'
+        paddingTop: 10
+
     },
 
     listHeader: {
         fontSize: 40,
         fontWeight: 'bold',
-        textAlign: 'center'
+        textAlign: 'center',
+        marginBottom: 10
     },
 
     block: {
-        padding: 10
+        marginBottom: 30
     }
 })
 

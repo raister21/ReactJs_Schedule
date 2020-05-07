@@ -8,7 +8,9 @@ function NotificationBody() {
         <View style={styles.container}>
             <Text style={styles.listHeader}>Notification</Text>
             <ItemSeperator />
-            <NotificationFeed />
+            <View style={styles.feedContainer}>
+                <NotificationFeed />
+            </View>
             <View style={styles.clearBtn}>
                 <Text style={{ textAlign: 'center', fontSize: 14 }}>Clear</Text>
             </View>
@@ -20,7 +22,7 @@ function NotificationBody() {
 const styles = StyleSheet.create({
 
     container: {
-
+        flex: 1,
         width: '100%'
 
     },
@@ -30,14 +32,15 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     clearBtn: {
-        marginTop: 120,
+        marginBottom: 10,
         borderRadius: 10,
         backgroundColor: '#FFD06B',
         padding: 20,
         borderRadius: 20,
-
-
-
+    },
+    feedContainer: {
+        flex: 1,
+        marginBottom: 10,
     }
 })
 
