@@ -16,8 +16,9 @@ function Header() {
     const updateTime = () => {
         const dayChange = day[time.getDay()]
         const hourChange = time.getHours()
-        const minuteChange = time.getMinutes()
+        const minuteChange = time.getMinutes().toLocaleString()
         const secondChange = time.getSeconds()
+
 
         setDayNow(dayChange)
         setHourNow(hourChange)
@@ -28,15 +29,14 @@ function Header() {
 
 
     useEffect(() => {
-        setTimeout(() => { updateTime() }, 1000)
+        setInterval(() => updateTime(), 1000)
     })
-
 
     return (
         <View style={styles.container}>
             <View style={styles.datetime}>
                 <Text style={styles.text}>{dayNow}</Text>
-                <Text style={styles.text}>{`${hourNow} : ${minuteNow} : ${secondNow}, ${month[time.getMonth()]} ${time.getDate()}`}</Text>
+                <Text style={styles.text}>{`${hourNow} : ${minuteNow} , ${month[time.getMonth()]} ${time.getDate()}`}</Text>
             </View>
             <View style={styles.profile}>
                 <ProfilePic />
