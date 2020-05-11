@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from 'react'
 import { FlatList, View, Text, StyleSheet } from 'react-native'
-import Notifications from '../database/notification.json'
 import ProfilePic from './ProfilePic'
-import Axios from 'axios'
+import axios from 'axios'
 
 function NotificationFeed() {
 
-    const [serverNotification, setServerNotification] = useState([])
+    const [serverData, setServerData] = useState([])
+
     useEffect(() => {
-        Axios.get('http://192.168.1.70:8081/api/notifications')
-            .then((response) => setServerNotification(response.data))
-            .then((response) => console.log(response.data))
+        axios.get('http://192.168.1.70:8081/api/notifications')
+            .then((response) => {
+                setServerData(response.data)
+                console.log(response.data)
+            }, [serverData])
             .catch((error) => console.log(error))
     }, [])
 
-    const [notification, setNotification] = useState(Notifications)
     return (
         <FlatList
-            data={serverNotification}
+            data={serverData}
             keyExtractor={item => item._id}
             renderItem={({ item }) => (
                 <View style={style.postBlock}>

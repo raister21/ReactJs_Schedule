@@ -1,20 +1,30 @@
-import React, { useState } from 'react'
-import { FlatList } from 'react-native-gesture-handler'
-import LocalNotes from '../database/localnotes.json'
-import { Text, View, StyleSheet } from 'react-native'
+import React, { useState, useEffect, Context } from 'react'
+import { FlatList, TouchableOpacity } from 'react-native-gesture-handler'
+import { Text, View, StyleSheet, AsyncStorage } from 'react-native'
+import Axios from 'axios'
 
-function Notes() {
 
-    const [note, setNote] = useState(LocalNotes)
+function Notes({ propNote }) {
+
+    const [note, setNote] = useState(propNote)
+    useEffect(() => {
+        Axios.get('http://192.168.1.70:8081/api/notes')
+            .then((response) => setNote(response.data))
+            .then((response) => console.log(response.data))
+            .catch((error) => console.log(error))
+    }, [])
+
 
     return (
         <FlatList
             data={note}
-            keyExtractor={item => item.id}
+            keyExtractor={item => item._id}
             renderItem={({ item }) => (
-                <View style={styles.noteBlock}>
-                    <Text style={styles.indNote}>{item.note}</Text>
-                </View>
+                <TouchableOpacity>
+                    <View style={styles.noteBlock}>
+                        <Text style={styles.indNote}>{item.note}</Text>
+                    </View>
+                </TouchableOpacity>
             )}
         />
     )

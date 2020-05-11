@@ -1,9 +1,14 @@
 import React from 'react'
-import { View, Text, StyleSheet, Button } from 'react-native'
+import { View, Text, StyleSheet, Button, useEffect, useState } from 'react-native'
 import ItemSeperator from '../components/ItemSeperator'
 import NotificationFeed from './NotificationFeed'
+import { TouchableOpacity } from 'react-native-gesture-handler'
+import axios from 'axios'
+
+
 
 function NotificationBody() {
+
     return (
         <View style={styles.container}>
             <Text style={styles.listHeader}>Notification</Text>
@@ -12,7 +17,9 @@ function NotificationBody() {
                 <NotificationFeed />
             </View>
             <View style={styles.clearBtn}>
-                <Text style={{ textAlign: 'center', fontSize: 14 }}>Clear</Text>
+                <TouchableOpacity>
+                    <Text style={{ textAlign: 'center', fontSize: 14 }}>Refresh</Text>
+                </TouchableOpacity>
             </View>
 
         </View>

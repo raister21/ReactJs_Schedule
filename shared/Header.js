@@ -30,7 +30,7 @@ function Header() {
 
     useEffect(() => {
         setInterval(() => updateTime(), 1000)
-    })
+    }, [])
 
     return (
         <View style={styles.container}>
